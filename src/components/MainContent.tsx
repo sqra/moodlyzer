@@ -2,7 +2,7 @@ import Form from './Form';
 import styles from './MainContent.module.scss';
 import face from '@/assets/images/face.svg';
 
-export default function MainContent() {
+const MainContent: React.FC = () => {
   return (
     <div className={styles.mainContent}>
       <div className={styles.face}>
@@ -15,4 +15,6 @@ export default function MainContent() {
       <Form />
     </div>
   );
-}
+};
+
+export default MainContent;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './Dialog.module.scss';
 import closeIcon from '../../assets/images/close.svg';
 
@@ -9,17 +9,22 @@ interface DialogProps {
 }
 
 const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, children }) => {
-  if (!isOpen) return null;
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (dialog) {
+      isOpen ? dialog.showModal() : dialog.close();
+    }
+  }, [isOpen]);
 
   return (
-    <div className={styles.dialogOverlay}>
-      <div className={styles.dialog}>
-        <button className={styles.closeButton} onClick={onClose}>
-          <img src={closeIcon} alt="Close" />
-        </button>
-        <div className={styles.dialogContent}>{children}</div>
-      </div>
-    </div>
+    <dialog ref={dialogRef} className={styles.dialog}>
+      <button className={styles.closeButton} onClick={onClose}>
+        <img src={closeIcon} alt="Close" />
+      </button>
+      <div className={styles.dialogContent}>{children}</div>
+    </dialog>
   );
 };
 

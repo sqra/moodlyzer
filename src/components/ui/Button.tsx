@@ -11,7 +11,7 @@ interface ButtonProps {
   className?: string;
 }
 
-export default function Button({
+const Button: React.FC<ButtonProps> = function ({
   name,
   isLoading,
   disabled,
@@ -28,4 +28,6 @@ export default function Button({
       {isLoading ? <Loader /> : 'Analyze'}
     </button>
   );
-}
+};
+
+export default Button;

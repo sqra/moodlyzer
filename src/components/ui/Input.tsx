@@ -13,7 +13,7 @@ interface InputProps {
   reset?: () => void;
 }
 
-export default function Input({
+const Input: React.FC<InputProps> = ({
   name,
   id = name,
   type = 'text',
@@ -24,7 +24,7 @@ export default function Input({
   autofocus = false,
 
   reset,
-}: InputProps) {
+}: InputProps) => {
   const [inputValue, setInputValue] = useState<string>('');
   const [characters, setCharacters] = useState<number>(0);
 
@@ -61,4 +61,6 @@ export default function Input({
       {error && <p className={styles.error}>{error}</p>}
     </fieldset>
   );
-}
+};
+
+export default Input;
