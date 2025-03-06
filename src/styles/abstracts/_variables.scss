@@ -1,0 +1,39 @@
+// Colors
+$color-san-marino: #456aba;
+$color-half-baked: #82c8c6;
+$color-rob-roy: #e6c46e;
+$color-japonica: #dd7760;
+$chestnut-rose: #c96751;
+$color-cold-turkey: #d5c5c5;
+$color-dusty-grey: #999999;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-emperor: #515151;
+$color-alto: #d9d9d9;
+$color-black-tranparent-25: rgba($color-black, 0.25);
+$color-black-tranparent-50: rgba($color-black, 0.5);
+
+// Gradients
+$gradient-san-marino: linear-gradient(
+  90deg,
+  $color-san-marino 0%,
+  $color-half-baked 100%
+);
+$gradient-japonica-gradient: linear-gradient(
+  0deg,
+  $color-japonica 0%,
+  $color-rob-roy 100%
+);
+
+// Breakpoints
+$breakpoint-sm: 36rem;
+$breakpoint-md: 48rem;
+$breakpoint-lg: 62rem;
+$breakpoint-xl: 75rem;
+
+// Defaults
+$box-shadow-big: -1.5rem 1.5rem 1.5rem -0.25rem rgba(0, 0, 0, 0.33);
+$border-radius-default: 2rem;
+$color-text-defaut: $color-white;
+$font-size-default: 1rem;
+$font-family-default: 'Roboto', sans-serif;
