@@ -7,24 +7,17 @@ import { useState } from 'react';
 import SentimentResults from './SentimentResults';
 import { FormErrors, FormValues, SentimentScore } from '../types';
 import { postSentimentAction } from '../api/postSentimentAction';
+import { validateForm } from '../utils/validateForm';
 
 export default function Form() {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [errors, setErrors] = useState<{ sentimentInput?: string }>({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [response, setResponse] = useState<SentimentScore[]>([]);
   const [resetInput, setResetInput] = useState<boolean>(false);
   const handleDialogClose = () => {
     setIsDialogOpen(false);
     resetForm();
-  };
-
-  const validateForm = (data: FormValues): FormErrors => {
-    let errors: { sentimentInput?: string } = {};
-    if (!data.sentimentInput) {
-      errors.sentimentInput = 'Please type something';
-    }
-    return errors;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
