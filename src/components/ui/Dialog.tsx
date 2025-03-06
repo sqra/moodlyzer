@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Dialog.module.scss';
-import closeIcon from '@/assets/images/close.svg';
+import closeIcon from '../../assets/images/close.svg';
 
 interface DialogProps {
   isOpen: boolean;
