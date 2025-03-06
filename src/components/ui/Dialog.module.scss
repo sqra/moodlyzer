@@ -1,0 +1,49 @@
+.dialogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $color-black-tranparent-50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-black;
+}
+
+.dialog {
+  background: $color-alto;
+  padding: 1rem;
+  border-radius: $border-radius-default;
+  max-width: 31.25rem;
+  min-height: 40rem;
+  width: calc(100% - 2rem);
+  position: relative;
+  @include center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 2.25rem;
+  height: 2.25rem;
+  transition: opacity 0.3s;
+  img {
+    width: inherit;
+    height: auto;
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.dialogContent {
+  margin-top: 1rem;
+  @include center;
+  flex-direction: column;
+}

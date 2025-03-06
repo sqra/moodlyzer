@@ -1,4 +1,4 @@
-@use 'variables.scss' as *;
+@use 'abstracts/index' as *;
 
 * {
   box-sizing: border-box;
@@ -11,7 +11,7 @@ body {
   font-family: $font-family-default;
   font-size: $font-size-default;
   color: $color-text-defaut;
-  background: $teritary-color;
+  background: $color-cold-turkey;
 }
 
 h1,
@@ -50,4 +50,15 @@ a {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+}
+
+.app {
+  max-width: 38.75rem;
+  padding-inline: 2rem;
+}
+
+@media (min-width: $breakpoint-md) {
+  .app {
+    padding-inline: 0;
+  }
 }

@@ -1,0 +1,45 @@
+.emoji {
+  width: 16rem;
+  height: 16rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &-very-positive {
+    background-image: url('@/assets/images/icon-very-positive.svg');
+  }
+
+  &-positive {
+    background-image: url('@/assets/images/icon-positive.svg');
+  }
+
+  &-neutral {
+    background-image: url('@/assets/images/icon-neutral.svg');
+  }
+
+  &-negative {
+    background-image: url('@/assets/images/icon-negative.svg');
+  }
+
+  &-very-negative {
+    background-image: url('@/assets/images/icon-very-negative.svg');
+  }
+}
+
+.description {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+  font-weight: 700;
+  color: $color-emperor;
+}
+
+.tip {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: $color-emperor;
+}
