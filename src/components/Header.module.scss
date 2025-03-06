@@ -1,0 +1,17 @@
+.header {
+  margin-block: 4rem;
+  padding-inline: 2rem;
+}
+
+@media (min-width: $breakpoint-md) {
+  .header {
+    margin-block: 6rem;
+    padding-inline: 0;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .header {
+    margin-block: 10rem;
+  }
+}

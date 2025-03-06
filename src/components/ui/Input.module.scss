@@ -1,0 +1,40 @@
+.fieldset {
+  position: relative;
+  border: none;
+
+  .input {
+    padding: 1rem 5rem 1rem 1rem;
+    border-radius: $border-radius-default;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $color-dusty-grey;
+    box-shadow: 0 0 0.625rem $color-black-tranparent-25;
+
+    &:focus {
+      outline: 0.188rem solid $color-san-marino;
+    }
+
+    &::placeholder {
+      color: $color-alto;
+    }
+  }
+
+  .lengthInfo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.5rem;
+    color: $color-alto;
+  }
+
+  .error {
+    color: $color-rob-roy;
+    font-weight: 300;
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
