@@ -64,7 +64,7 @@
   }
 
   .paragraph {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: 100;
     padding-block: 2rem;
     text-wrap: balance;
@@ -83,5 +83,8 @@
 @media (min-width: $breakpoint-md) {
   .mainContent {
     padding: 2.25rem 4rem;
+    .paragraph {
+      font-size: 1.75rem;
+    }
   }
 }

@@ -1,5 +1,7 @@
 import styles from './Loader.module.scss';
 
-export default function Loader() {
+const Loader: React.FC = () => {
   return <div className={styles.dots}></div>;
-}
+};
+
+export default Loader;

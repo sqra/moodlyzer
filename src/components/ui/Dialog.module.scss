@@ -1,49 +1,64 @@
-.dialogOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $color-black-tranparent-50;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $color-black;
-}
-
 .dialog {
-  background: $color-alto;
+  position: absolute;
+  top: 50%;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  max-width: 31.25rem;
+  width: calc(100% - 2rem);
   padding: 1rem;
   border-radius: $border-radius-default;
-  max-width: 31.25rem;
-  min-height: 40rem;
-  width: calc(100% - 2rem);
-  position: relative;
-  @include center;
-}
-
-.closeButton {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
+  background: $color-alto;
   border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  width: 2.25rem;
-  height: 2.25rem;
-  transition: opacity 0.3s;
-  img {
-    width: inherit;
-    height: auto;
+
+  &::backdrop {
+    backdrop-filter: blur(1rem);
   }
-  &:hover {
-    opacity: 0.5;
+
+  &[open]::backdrop {
+    animation: backdrop 0.3s ease normal;
+  }
+
+  &.hide {
+    animation-direction: reverse;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 2.25rem;
+    height: 2.25rem;
+    transition: opacity 0.3s;
+    img {
+      width: inherit;
+      height: auto;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .dialogContent {
+    margin-top: 1rem;
+    @include center;
+    flex-direction: column;
   }
 }
 
-.dialogContent {
-  margin-top: 1rem;
-  @include center;
-  flex-direction: column;
+@keyframes backdrop {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

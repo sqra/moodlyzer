@@ -2,7 +2,7 @@ import { SentimentScore } from '../types';
 import { useSentimentAnalysis } from '../hooks/useSentimentAnalysis';
 import styles from './SentimentResults.module.scss';
 
-export default function SentimentResults({ data }: { data: SentimentScore[] }) {
+const SentimentResults: React.FC<{ data: SentimentScore[] }> = ({ data }) => {
   const { emoji, description, tip } = useSentimentAnalysis(data);
 
   return (
@@ -12,4 +12,6 @@ export default function SentimentResults({ data }: { data: SentimentScore[] }) {
       <div className={styles.tip}>TIP: {tip}</div>
     </>
   );
-}
+};
+
+export default SentimentResults;

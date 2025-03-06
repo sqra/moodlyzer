@@ -9,15 +9,18 @@ import { FormErrors, FormValues, SentimentScore } from '../types';
 import { postSentimentAction } from '../api/postSentimentAction';
 import { validateForm } from '../utils/validateForm';
 
-export default function Form() {
+const Form: React.FC = () => {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errors, setErrors] = useState<FormErrors>({});
   const [response, setResponse] = useState<SentimentScore[]>([]);
   const [resetInput, setResetInput] = useState<boolean>(false);
+
   const handleDialogClose = () => {
     setIsDialogOpen(false);
-    resetForm();
+    setErrors({});
+    setResponse([]);
+    setResetInput(true);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -46,12 +49,6 @@ export default function Form() {
     }
   };
 
-  const resetForm = () => {
-    setErrors({});
-    setResponse([]);
-    setResetInput(true);
-  };
-
   return (
     <>
       <form
@@ -77,9 +74,13 @@ export default function Form() {
           disabled={isLoading}
         />
       </form>
-      <Dialog isOpen={isDialogOpen} onClose={handleDialogClose}>
-        {response && <SentimentResults data={response} />}
-      </Dialog>
+      {response && (
+        <Dialog isOpen={isDialogOpen} onClose={handleDialogClose}>
+          <SentimentResults data={response} />
+        </Dialog>
+      )}
     </>
   );
-}
+};
+
+export default Form;
