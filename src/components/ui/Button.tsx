@@ -4,19 +4,23 @@ import Loader from './Loader';
 export type ButtonType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps {
-  type: ButtonType;
+  children: React.ReactNode;
+  type?: ButtonType;
   name?: string;
   isLoading?: boolean;
   disabled?: boolean;
   className?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 const Button: React.FC<ButtonProps> = function ({
+  children,
+  type = 'button',
   name,
   isLoading,
   disabled,
-  type,
   className,
+  onClick,
 }: ButtonProps) {
   return (
     <button
@@ -24,8 +28,9 @@ const Button: React.FC<ButtonProps> = function ({
       name={name}
       className={`${styles.button} ${className}`}
       disabled={disabled}
+      onClick={onClick}
     >
-      {isLoading ? <Loader /> : 'Analyze'}
+      {isLoading ? <Loader /> : children}
     </button>
   );
 };

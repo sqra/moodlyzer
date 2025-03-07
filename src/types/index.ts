@@ -8,14 +8,6 @@ export interface SentimentScore {
   score: number;
 }
 
-export interface FormValues {
-  sentimentInput: FormDataEntryValue | null;
-}
-
-export interface FormErrors {
-  sentimentInput?: string;
-}
-
 export interface SentimentResults {
   emoji: string;
   description: string;
@@ -28,3 +20,9 @@ export type SentimentResultsType =
   | 'NEUTRAL'
   | 'NEGATIVE'
   | 'VERY_NEGATIVE';
+
+export interface SubmitFormResponse {
+  status: string;
+  message: string;
+  data: SentimentScore[] | null;
+}

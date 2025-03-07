@@ -59,7 +59,7 @@ describe('postSentimentAction', () => {
     const text = 'I am happy';
 
     await expect(postSentimentAction(text)).rejects.toThrow(
-      'Internal Server Error'
+      "It's not a bug, it's a surprise feature! 😎"
     );
   });
 
@@ -78,7 +78,7 @@ describe('postSentimentAction', () => {
     const text = 'I am happy';
 
     await expect(postSentimentAction(text)).rejects.toThrow(
-      'Service Unavailable'
+      "It's not a bug, it's a surprise feature! 😎"
     );
   });
 });
