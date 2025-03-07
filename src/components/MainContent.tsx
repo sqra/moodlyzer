@@ -1,3 +1,5 @@
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from './ErrorFallback';
 import Form from './Form';
 import styles from './MainContent.module.scss';
 import face from '@/assets/images/face.svg';
@@ -8,11 +10,13 @@ const MainContent: React.FC = () => {
       <div className={styles.face}>
         <img src={face} alt="" />
       </div>
-      <p className={styles.paragraph}>
+      <h1 className={styles.paragraph}>
         Share your thoughts – <strong>type something</strong>, and we'll analyze
         the sentiment of your text!
-      </p>
-      <Form />
+      </h1>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Form />
+      </ErrorBoundary>
     </div>
   );
 };

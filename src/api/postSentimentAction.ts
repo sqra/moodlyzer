@@ -9,7 +9,7 @@ const handleResponse = async (
   const data = await response.json();
 
   if (!response.ok) {
-    throw new Error(data.message || 'Something goes wrong');
+    throw new Error("It's not a bug, it's a surprise feature! 😎");
   }
 
   return data[0];
